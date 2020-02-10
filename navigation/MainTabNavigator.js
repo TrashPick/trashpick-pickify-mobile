@@ -4,9 +4,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import Home from '../screens/Home/Home';
+import Notification from '../screens/Notifications/Notification'
+import Search from '../screens/Search/Search';
+import Message from '../screens/Message/Message';
+import Settings from '../screens/Settings/Settings';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -15,11 +17,10 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: HomeScreen,
+    Home: Home,
   },
   config
 );
-
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
@@ -33,28 +34,61 @@ HomeStack.navigationOptions = {
     />
   ),
 };
-
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const SearchStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Search: Search,
   },
   config
 );
+SearchStack.navigationOptions = {
+  tabBarLabel: 'Search',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-search${focused ? '' : '-outline'}`
+          : 'ios-search'
+      }
+    />
+  ),
+};
+SearchStack.path = '';
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+const NotificationStack = createStackNavigator(
+  {
+    Notification: Notification,
+  },
+  config
+);
+NotificationStack.navigationOptions = {
+  tabBarLabel: 'Notification',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
   ),
 };
+NotificationStack.path = '';
 
-LinksStack.path = '';
+const MessageStack = createStackNavigator(
+  {
+    Message: Message,
+  },
+  config
+);
+MessageStack.navigationOptions = {
+  tabBarLabel: 'Message',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-mail' : 'md-mail'} />
+  ),
+};
+MessageStack.path = '';
+
 
 const SettingsStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    Settings: Settings,
   },
   config
 );
@@ -70,8 +104,9 @@ SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
+  SearchStack,
+  NotificationStack,
+  MessageStack,
 });
 
 tabNavigator.path = '';
