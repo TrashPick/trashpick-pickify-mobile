@@ -14,8 +14,8 @@ class HomeScreen extends React.Component{
                             <Image source={require('../../assets/images/male.jpeg')} style={{width:70,height:70,borderRadius:35}}/>
                         </View>
                         <View style={{backgroundColor:'white',height:100,width:20,flex:4,flexDirection:'column',justifyContent:'center'}}>
-                            <Text style={{fontSize:15}}>Kwame Boateng</Text>
-                            <Text style={{fontSize:15}}>Apple ID,iCloud,iTunes & App Store</Text>
+                            <Text style={{fontSize:20,fontWeight:'bold'}}>Kwame Boateng</Text>
+                            <Text style={{fontSize:12}}>Apple ID, iCloud, iTunes & App Store</Text>
                         </View>
                         <View style={{height:100,flex:1,alignItems:'center',justifyContent:'center',paddinHorizontal:10}}>
                                 <Ionicons size={24} color='grey' name="ios-arrow-forward"/>
