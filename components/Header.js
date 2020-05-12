@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import Fonts from '../constants/Fonts'
 
 export default class Header extends React.Component {
 	static defaultProps = {
@@ -18,7 +19,7 @@ export default class Header extends React.Component {
 						{this.props.rightAction}
 					</View>
 				</View>
-				<View>
+				<View style={styles.headerStyle}>
 					<Text style={styles.headerTitleStyle}>{this.props.title}</Text>
 				</View>
 			</View>
@@ -38,11 +39,14 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center'
 	},
-
+	headerStyle:{
+		alignItems:'flex-start',
+		paddingHorizontal:30
+	},
 	headerTitleStyle: {
-		fontSize: 18,
-		fontFamily:'Medium',
-		letterSpacing:0,
+		fontSize:Fonts.h1,
+		fontFamily:'Bold',
+		letterSpacing:-0.8,
 		textAlign:'center'
 	}
 });
