@@ -36,7 +36,13 @@ async function loadResourcesAsync() {
     ]),
     Font.loadAsync({
       ...Ionicons.font,
-      'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+      'Bold':require('./assets/fonts/Quicksand-Bold.ttf'),
+      'SemiBold':require('./assets/fonts/Quicksand-SemiBold.ttf'),
+      'Medium':require('./assets/fonts/Quicksand-Medium.ttf'),
+      'Regular':require('./assets/fonts/Quicksand-Regular.ttf'),
+      'Light':require('./assets/fonts/Quicksand-Light.ttf'),
+      
+
     }),
   ]);
 }
