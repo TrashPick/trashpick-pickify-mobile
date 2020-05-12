@@ -9,6 +9,9 @@ import Notification from '../screens/Notifications/Notification'
 import Search from '../screens/Search/Search';
 import Message from '../screens/Message/Message';
 import Settings from '../screens/Settings/Settings';
+import Request from '../screens/Request/Request'
+import Profile from '../screens/Profile/Profile';
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -19,6 +22,7 @@ const HomeStack = createStackNavigator(
   {
     Home: Home,
   },
+  { headerMode: 'none' },
   config
 );
 HomeStack.navigationOptions = {
@@ -28,22 +32,23 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-home${focused ? '' : '-outline'}`
+          : 'md-home'
       }
     />
   ),
 };
 HomeStack.path = '';
 
-const SearchStack = createStackNavigator(
+const RequestStack = createStackNavigator(
   {
-    Search: Search,
+    Search: Request,
   },
+  { headerMode: 'none' },
   config
 );
-SearchStack.navigationOptions = {
-  tabBarLabel: 'Search',
+RequestStack.navigationOptions = {
+  tabBarLabel: 'Request',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -55,41 +60,13 @@ SearchStack.navigationOptions = {
     />
   ),
 };
-SearchStack.path = '';
-
-const NotificationStack = createStackNavigator(
-  {
-    Notification: Notification,
-  },
-  config
-);
-NotificationStack.navigationOptions = {
-  tabBarLabel: 'Notification',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
-};
-NotificationStack.path = '';
-
-const MessageStack = createStackNavigator(
-  {
-    Message: Message,
-  },
-  config
-);
-MessageStack.navigationOptions = {
-  tabBarLabel: 'Message',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-mail' : 'md-mail'} />
-  ),
-};
-MessageStack.path = '';
-
+RequestStack.path = '';
 
 const SettingsStack = createStackNavigator(
   {
     Settings: Settings,
   },
+  { headerMode: 'none' },
   config
 );
 
@@ -104,9 +81,9 @@ SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  SearchStack,
-  NotificationStack,
-  MessageStack,
+  RequestStack,
+  SettingsStack,
+ 
 });
 
 tabNavigator.path = '';
