@@ -1,5 +1,5 @@
 import React from 'react'
-import { View,StyleSheet,Text,TouchableWithoutFeedback,Animated,To } from 'react-native'
+import { View,StyleSheet,Text,TouchableWithoutFeedback,Animated,Platform,TouchableOpacity } from 'react-native'
 import Font from '../constants/Fonts'
 import Colors from '../constants/Colors'
 import Signin from '../screens/Auth/Signin'
@@ -29,19 +29,39 @@ export default class  Button extends React.Component{
           }
        if(this.props.type === "signup"){
         return(
+        <View>
+           {Platform.OS === 'ios' ?
+            <TouchableOpacity activeOpacity={1} onPress={this.props.onClick}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}} >
+                <Animated.View  style={[styles.button,animationStyle]}>
+                    <Text style={styles.text}>{this.props.title}</Text>
+                </Animated.View>
+            </TouchableOpacity>
+         :
           <TouchableWithoutFeedback onPress={this.props.onClick}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}} >
-                  <Animated.View  style={[styles.button,animationStyle]}>
-                      <Text style={styles.text}>{this.props.title}</Text>
-                  </Animated.View>
-          </TouchableWithoutFeedback>
+                    <Animated.View  style={[styles.button,animationStyle]}>
+                        <Text style={styles.text}>{this.props.title}</Text>
+                    </Animated.View>
+            </TouchableWithoutFeedback>
+        }
+        </View>
       )
        }else if(this.props.type === "signin"){
         return(
+         <View>
+           {Platform.OS === 'ios' ?
+           <TouchableOpacity activeOpacity={1} onPress={this.props.onClick}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}}>
+                  <Animated.View  style={[styles.button2,animationStyle]}>
+                      <Text style={styles.text2}>{this.props.title}</Text>
+                  </Animated.View>
+          </TouchableOpacity>
+          :
           <TouchableWithoutFeedback onPress={this.props.onClick}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}}>
                   <Animated.View  style={[styles.button2,animationStyle]}>
                       <Text style={styles.text2}>{this.props.title}</Text>
                   </Animated.View>
           </TouchableWithoutFeedback>
+           }
+         </View>
       )
        }
     }
