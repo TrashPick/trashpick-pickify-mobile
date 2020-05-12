@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,TouchableOpacity } from 'react-native'
+import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Plaform,TouchableOpacity } from 'react-native'
 import AuthContext from '../Auth/AuthContext'
 import Colors from '../../constants/Colors'
 import Fonts from '../../constants/Fonts'
@@ -16,11 +16,21 @@ export default function Signin({navigation}){
     
     const renderBackBtn = ()=> {
           return (
+            <View>
+              {Platform.OS === 'ios' ?
+              <TouchableOpacity activeOpacity={0.8} onPress={() =>navigation.pop()}>
+              <View style={styles.backBtn}>
+                <AntDesign name="arrowleft" color="black" size={18} />
+              </View>
+            </TouchableOpacity>
+            :
             <TouchableNativeFeedback onPress={() =>navigation.pop()} background={TouchableNativeFeedback.SelectableBackgroundBorderless()} useForeground={true} >
               <View style={styles.backBtn}>
                 <AntDesign name="arrowleft" color="black" size={18} />
               </View>
             </TouchableNativeFeedback>
+              }
+            </View>
           );
     }
     
@@ -39,7 +49,7 @@ export default function Signin({navigation}){
 						behavior={Platform.OS === "android" ? "height" : "padding"}
 						keyboardVerticalOffset={10}
 						>
-            <View style={{justifyContent:'center',flex:1,paddingHorizontal:10,paddingVertical:60}}>
+            <View style={{justifyContent:'center',flex:1,paddingHorizontal:10,paddingVertical:40}}>
               <View style={styles.emailContainer}>
                 <TextInput input="email" placeholder="E-mail" onChange={value =>{emailChange(value)}}/>
               </View>
@@ -56,7 +66,7 @@ export default function Signin({navigation}){
               </View>
             </View>
             <View style={styles.btnContainer}>
-               <Button type="signup" onClick={()=>{}} title="Sign In"/>
+               <Button type="signup" onClick={()=>{navigation.navigate("Signup")}} title="Sign In"/>
             </View>
             
             </KeyboardAvoidingView>
@@ -73,7 +83,6 @@ const styles = StyleSheet.create({
         padding:15
     },
     emailContainer:{
-      justifyContent:'center',
       paddingVertical:20
     },
     passwordContainer:{
@@ -82,7 +91,7 @@ const styles = StyleSheet.create({
       flex:1,
       justifyContent:'flex-end',
       paddingHorizontal:20,
-      marginBottom:20
+      marginBottom:40
   },
   more:{
     fontFamily:"Medium",

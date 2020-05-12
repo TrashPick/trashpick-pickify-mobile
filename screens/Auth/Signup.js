@@ -15,11 +15,21 @@ export default function Signup({navigation}){
     
     const renderBackBtn = ()=> {
           return (
+            <View>
+              {Platform.OS === 'ios' ?
+              <TouchableOpacity activeOpacity={0.8} onPress={() =>navigation.pop()}>
+              <View style={styles.backBtn}>
+                <AntDesign name="arrowleft" color="black" size={18} />
+              </View>
+            </TouchableOpacity>
+            :
             <TouchableNativeFeedback onPress={() =>navigation.pop()} background={TouchableNativeFeedback.SelectableBackgroundBorderless()} useForeground={true} >
               <View style={styles.backBtn}>
                 <AntDesign name="arrowleft" color="black" size={18} />
               </View>
             </TouchableNativeFeedback>
+              }
+            </View>
           );
     }
     const emailChange = (target)=>{
@@ -52,7 +62,7 @@ export default function Signup({navigation}){
               </View>
             </View>
             <View style={styles.btnContainer}>
-               <Button type="signup" onClick={()=>{}} title="Sign Up"/>
+               <Button type="signup" onClick={()=>{navigation.navigate("Signin")}} title="Sign Up"/>
             </View>
             
             </KeyboardAvoidingView>
@@ -79,7 +89,7 @@ const styles = StyleSheet.create({
       flex:1,
       justifyContent:'flex-end',
       paddingHorizontal:20,
-      marginBottom:20
+      marginBottom:40
   },
   more:{
     fontFamily:"Medium",

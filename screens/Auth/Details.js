@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Platform,TouchableOpacity} from 'react-native'
+import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Platform,TouchableOpacity,} from 'react-native'
 import AuthContext from '../Auth/AuthContext'
 import Colors from '../../constants/Colors'
 import Fonts from '../../constants/Fonts'
@@ -61,6 +61,6 @@ const styles = StyleSheet.create({
       flex:1,
       justifyContent:'flex-end',
       paddingHorizontal:20,
-      marginBottom:20
+      marginBottom:40
   },
 })
