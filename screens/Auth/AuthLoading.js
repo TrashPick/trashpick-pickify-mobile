@@ -16,7 +16,7 @@ export default class AuthLoading extends React.Component {
 		const usertoken = await AsyncStorage.getItem('userToken');
 		console.log(usertoken);
 		if (usertoken === null) {
-			this.props.navigation.navigate('Auth');
+			this.props.navigation.navigate('AuthDetails');
 		} else {
 			this.props.navigation.navigate('Main');
 		}
