@@ -4,8 +4,10 @@ import { View, Text, StyleSheet } from 'react-native'
 class Notification extends React.Component{
     render(){
         return(
-                <View>
-                    <Text>Notification</Text>
+                <View style={styles.container}>
+                   <View style={{justifyContent:'center',alignItems:'center'}}>
+                    <Text style={{textAlign:'center',fontFamily:'Regular',fontSize:16}}>Notification</Text>
+                   </View>
                 </View>
         )
     }
@@ -13,5 +15,7 @@ class Notification extends React.Component{
 export default Notification;
 
 const styles = StyleSheet.create({
-
+container:{
+    flex:1
+}
 })
