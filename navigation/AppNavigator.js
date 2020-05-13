@@ -7,6 +7,7 @@ import Signup from '../screens/Auth/Signup'
 import Signin from '../screens/Auth/Signin'
 import Forgot from '../screens/Auth/Forgot'
 import Verify from '../screens/Auth/Verification'
+import Otp from '../screens/Auth/Otp'
 import Splash from '../screens/Auth/Splash'
 import AuthLoading from '../screens/Auth/AuthLoading'
 import { createStackNavigator } from 'react-navigation-stack';
@@ -22,6 +23,7 @@ const SecondAuthStack = createStackNavigator({
   Signin:Signin,
   Forgot:Forgot,
   Verify:Verify,
+  Otp:Otp,
   Splash:Splash,
 },
   { headerMode:"none"}
