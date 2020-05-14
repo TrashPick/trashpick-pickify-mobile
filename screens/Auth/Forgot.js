@@ -48,7 +48,7 @@ export default function ForgotPassword(){
     return(
        <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
-            <Header leftAction={renderBackBtn()} title="Forogt passowrd" />
+            <Header leftAction={renderBackBtn()} title="Forgot Password" />
             <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}
@@ -87,11 +87,5 @@ const styles = StyleSheet.create({
       paddingHorizontal:20,
       marginBottom:40
   },
-  more:{
-    fontFamily:"Medium",
-    fontSize:Fonts.t2,
-    textAlign:'center',
-    letterSpacing:-0.2,
-    color:Colors.grey,
-  }
+  
 })
