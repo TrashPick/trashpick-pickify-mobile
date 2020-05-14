@@ -10,9 +10,13 @@ import {AntDesign} from '@expo/vector-icons'
 
 export default function Verification({navigation}){
   const [number,setNumber] = useState("");
+  const [ code ,setCode] = useState("+233")
   const numberChange = (target)=>{
     setNumber(target.nativeEvent.text)
       }
+      const codeChange = (target)=>{
+        setCode(target.nativeEvent.text)
+          }
     const renderBackBtn = ()=> {
         return (
           <View>
@@ -41,9 +45,14 @@ export default function Verification({navigation}){
 						behavior={Platform.OS === "android" ? "height" : "padding"}
 						keyboardVerticalOffset={10}
 						>
+            <View style={styles.phoneNumber}>
               <View style={styles.codeContainer}>
-                <TextInput input="number" placeholder="Enter here" onChange={value =>{numberChange(value)}}/>
+                 <TextInput input="code" placeholder="" onChange={value =>{codeChange(value)}} value={code}/>
               </View>
+              <View style={styles.phoneContainer}>
+                 <TextInput input="number" placeholder="Phone Number" onChange={value =>{numberChange(value)}}/>
+              </View>
+            </View>
               <View style={styles.btnContainer}>
                   <Button type="signup" onClick={()=>{navigation.navigate("Otp")}} title="Continue"/>
               </View>
@@ -63,9 +72,19 @@ const styles = StyleSheet.create({
     emailContainer:{
       paddingVertical:20
     },
+    phoneNumber:{
+      flexDirection:'row',
+      flex:1,
+      alignItems: 'center',
+      paddingHorizontal:10
+    },
     codeContainer:{
       justifyContent:'center',
       flex:1
+    },
+    phoneContainer:{
+      justifyContent:'center',
+      flex:4
     },
     btnContainer:{
       flex:1,
