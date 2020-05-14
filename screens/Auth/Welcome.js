@@ -37,7 +37,7 @@ export default class Welcome extends React.Component{
                 />
             </View>
             <View style={{justifyContent:'flex-end',flex:1,}}>
-                <Text style={styles.summary}>Use Pickify </Text>
+                <Text style={styles.summary}>Welcome to Pickify 👋 </Text>
             </View>
            <View style={{flex:1,top:70}}>
                 <View style={styles.btnContainer1}>
