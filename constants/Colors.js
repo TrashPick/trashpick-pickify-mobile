@@ -7,6 +7,7 @@ const border = '#F2F2F2';
 const white = '#FCFCFC';
 const grey = '#A6AAB4';
 const textBackground = '#F0FBF3';
+const otpColor = '#bdbdbd';
 
 
 export default {
@@ -19,6 +20,7 @@ export default {
   white,
   grey,
   textBackground,
+  otpColor,
   tabIconDefault: '#ccc',
   tabIconSelected: tintColor,
   tabBar: '#fefefe',
