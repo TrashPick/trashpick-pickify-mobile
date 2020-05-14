@@ -42,7 +42,7 @@ export default function Otp({navigation}){
 						behavior={Platform.OS === "android" ? "height" : "padding"}
 						keyboardVerticalOffset={10}
 						>
-                <View style={{paddingVertical:10,justifyContent:'center',alignItems:'center',paddingHorizontal:50,flex:1}}>
+                 <View style={{paddingVertical:10,justifyContent:'center',alignItems:'center',paddingHorizontal:50,flex:1}}>
                       <Text style={{fontFamily:'Medium',fontSize:16,color:Colors.grey,textAlign:'center',lineHeight:25}}>Enter the 5- digits code sent to (0500486323)</Text>
                   </View>
                   <View style={{paddingHorizontal:30,justifyContent:'center',flex:1}}>
@@ -64,6 +64,12 @@ export default function Otp({navigation}){
                     )}
                   />
               </View>
+              <View style={{paddingVertical:10,justifyContent:'center',alignItems:'center',paddingHorizontal:50,flex:1,flexDirection:'row'}}>
+                      <Text style={{fontFamily:'Medium',fontSize:16,color:Colors.grey,textAlign:'center',lineHeight:25}}>Didn't receive any code? </Text>
+                      <TouchableOpacity activeOpacity={0.5} style={{padding:10}} onPress={()=>{}}>
+                        <Text style={[styles.more,{color:Colors.green}]}>Resend</Text>
+                      </TouchableOpacity>
+                  </View>
                 <View style={styles.btnContainer}>
                      <Button type="signup" onClick={()=>{navigation.navigate("Signup")}} title="Verify"/>
                 </View>
