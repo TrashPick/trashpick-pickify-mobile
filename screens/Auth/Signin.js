@@ -58,7 +58,7 @@ export default function Signin({navigation}){
               </View>
               <View style={{alignItems:'flex-start',flexDirection:'row',alignItems:'center',paddingLeft:10,justifyContent:'space-between',paddingVertical:10}}>
                  <TouchableOpacity activeOpacity={0.5} style={{padding:10}} onPress={()=>{navigation.navigate("Forgot")}}>
-                     <Text style={styles.more}>Forgot password</Text>
+                     <Text style={styles.more}>Forgot password?</Text>
                   </TouchableOpacity>
                   <TouchableOpacity activeOpacity={0.5} style={{padding:10}} onPress={()=>{navigation.navigate("Signup")}}>
                      <Text style={[styles.more,{color:Colors.green}]}>Sign up</Text>
