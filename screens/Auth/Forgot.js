@@ -8,7 +8,7 @@ import Header from '../../components/Header'
 import TextInput from '../../components/TextInput'
 import {AntDesign} from '@expo/vector-icons'
 
-export default function ForgotPassword(){
+export default function ForgotPassword({navigation}){
     const [email,setEmail] = useState("");
     const [passowrd,setPassword] = useState("");
     
