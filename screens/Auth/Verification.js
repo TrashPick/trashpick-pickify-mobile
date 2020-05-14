@@ -1,6 +1,5 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Plaform,TouchableOpacity } from 'react-native'
-import Colors from '../../constants/Colors'
 import Colors from '../../constants/Colors'
 import Fonts from '../../constants/Fonts'
 import Button from '../../components/Button'
@@ -9,7 +8,11 @@ import TextInput from '../../components/TextInput'
 import {AntDesign} from '@expo/vector-icons'
 
 
-export default function Verification(){
+export default function Verification({navigation}){
+  const [number,setNumber] = useState("");
+  const numberChange = (target)=>{
+    setNumber(target.nativeEvent.text)
+      }
     const renderBackBtn = ()=> {
         return (
           <View>
@@ -32,16 +35,18 @@ export default function Verification(){
     return(
         <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
-            <Header leftAction={renderBackBtn()} title="Enter phoneNumber" />
+            <Header leftAction={renderBackBtn()} title="Enter Phone number" />
             <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}
 						keyboardVerticalOffset={10}
 						>
-
-                <View style={styles.btnContainer}>
-                     <Button type="signup" onClick={()=>{navigation.navigate("Otp")}} title="Continue"/>
-                </View>
+              <View style={styles.codeContainer}>
+                <TextInput input="number" placeholder="Enter here" onChange={value =>{numberChange(value)}}/>
+              </View>
+              <View style={styles.btnContainer}>
+                  <Button type="signup" onClick={()=>{navigation.navigate("Otp")}} title="Continue"/>
+              </View>
             </KeyboardAvoidingView>
             </View>
         </SafeAreaView>
@@ -58,7 +63,9 @@ const styles = StyleSheet.create({
     emailContainer:{
       paddingVertical:20
     },
-    passwordContainer:{
+    codeContainer:{
+      justifyContent:'center',
+      flex:1
     },
     btnContainer:{
       flex:1,
@@ -72,5 +79,6 @@ const styles = StyleSheet.create({
     textAlign:'center',
     letterSpacing:-0.2,
     color:Colors.grey,
-  }
+  },
+ 
 })
