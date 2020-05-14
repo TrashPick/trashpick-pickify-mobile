@@ -60,7 +60,7 @@ export default function ForgotPassword({navigation}){
               </View>
             </View>
             <View style={styles.btnContainer}>
-               <Button type="signup" onClick={()=>{navigation.navigate("Send code")}} title="Sign In"/>
+               <Button type="signup" onClick={()=>{navigation.navigate("Send code")}} title="Send code"/>
             </View>
             
             </KeyboardAvoidingView>
