@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
 		fontFamily: "Medium",
       },
       textContainer:{
-        borderColor:Colors.grey,
-        borderWidth:0.5,
+        borderColor:Colors.border,
+        borderBottomWidth:1.5,
         borderRadius:5,
         padding:10,
       }
