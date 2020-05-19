@@ -66,7 +66,7 @@ export default function Signin({navigation}){
               </View>
             </View>
             <View style={styles.btnContainer}>
-               <Button type="signup" onClick={()=>{navigation.navigate("Signup")}} title="Sign In"/>
+               <Button type="signup" onClick={()=>{navigation.navigate("Main")}} title="Sign In"/>
             </View>
             
             </KeyboardAvoidingView>
