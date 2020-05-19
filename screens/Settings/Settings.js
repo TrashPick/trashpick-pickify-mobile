@@ -5,8 +5,10 @@ import Colors from '../../constants/Colors'
 class Settings extends React.Component{
     render(){
         return(
-                <View>
-                    <Text>Settings</Text>
+                <View style={styles.container}>
+                   <View style={{justifyContent:'center',alignItems:'center',flex:1}}>
+                    <Text style={{textAlign:'center',fontFamily:'Regular',fontSize:16}}>Notification</Text>
+                   </View>
                 </View>
         )
     }
@@ -14,5 +16,7 @@ class Settings extends React.Component{
 export default Settings;
 
 const styles = StyleSheet.create({
-
+    container:{
+        flex:1
+    }
 })
