@@ -2,17 +2,15 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
+// import {  useNavigation} from '@react-navigation/native'
+import Button from '../components/Button'
 import TabBarIcon from '../components/TabBarIcon';
 import Home from '../screens/Home/Home';
 import Notification from '../screens/Notifications/Notification'
-import Search from '../screens/Search/Search';
-import Message from '../screens/Message/Message';
-import Settings from '../screens/Settings/Settings';
 import Request from '../screens/Request/Request'
-import Profile from '../screens/Profile/Profile';
+import Colors from '../constants/Colors';
 
-
+// const navigation = useNavigation()
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
@@ -28,63 +26,56 @@ const HomeStack = createStackNavigator(
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-home${focused ? '' : '-outline'}`
-          : 'md-home'
-      }
-    />
+    <TabBarIcon focused={focused} icon="home" name={Platform.OS === 'ios' ? 'home' : 'home'} />
   ),
 };
 HomeStack.path = '';
 
 const RequestStack = createStackNavigator(
   {
-    Search: Request,
+    Request: Request,
   },
   { headerMode: 'none' },
   config
 );
 RequestStack.navigationOptions = {
   tabBarLabel: 'Request',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-search${focused ? '' : '-outline'}`
-          : 'ios-search'
-      }
-    />
+  tabBarIcon: ({focused}) => (
+  <Button focused={focused} type="request" onClick={()=>{navigate("Request")}}/>
   ),
 };
 RequestStack.path = '';
 
-const SettingsStack = createStackNavigator(
+const NotificationStack = createStackNavigator(
   {
-    Settings: Settings,
+    Notification: Notification,
   },
   { headerMode: 'none' },
   config
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+NotificationStack.navigationOptions = {
+  tabBarLabel: 'Notifications',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} icon="notification" name={Platform.OS === 'ios' ? 'notifications-none' : 'notifications-none'} />
   ),
 };
 
-SettingsStack.path = '';
+NotificationStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   RequestStack,
-  SettingsStack,
+  NotificationStack,
  
-});
+},{
+  tabBarOptions: {
+      showLabel: true,
+      activeTintColor:Colors.green,
+      inactiveTintColor :Colors.grey,
+      
+		}
+},{});
 
 tabNavigator.path = '';
 
