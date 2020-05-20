@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet,Image,StatusBar,SafeAreaView,TouchableOpacity,TouchableNativeFeedback } from 'react-native'
+import { View, Text, StyleSheet,Image,StatusBar,SafeAreaView,TouchableOpacity,TouchableNativeFeedback,Platform } from 'react-native'
 import {  Ionicons } from '@expo/vector-icons'
 import Colors from '../../constants/Colors'
 import Header from '../../components/Header'
@@ -11,11 +11,18 @@ function Home({navigation}){
     return(
        <SafeAreaView style={{flex:1}}>
             <View style={{flexDirection:'row',alignItems:'center',padding:20}}>
+                {Platform.OS === "ios" ?
+                <TouchableOpacity onPress={()=>{navigation.openDrawer()}}>
+                    <View style={styles.menu}>
+                        <MaterialIcons name="menu" size={24} color="black" />
+                    </View> 
+                </TouchableOpacity>
+                :
                 <TouchableNativeFeedback onPress={()=>{navigation.openDrawer()}}>
                     <View style={styles.menu}>
                         <MaterialIcons name="menu" size={24} color="black" />
                     </View> 
-                </TouchableNativeFeedback>
+                </TouchableNativeFeedback>}
                 <View style={{paddingLeft:10}}>
                    {/* <Header title="Home" type="tabHeader" /> */}
                 </View>
