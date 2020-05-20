@@ -4,15 +4,16 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 // import {  useNavigation} from '@react-navigation/native'
 import Button from '../components/Button'
+import Colors from '../constants/Colors';
 import TabBarIcon from '../components/TabBarIcon';
 import Home from '../screens/Home/Home';
 import Notification from '../screens/Notifications/Notification'
 import Request from '../screens/Request/Request'
-import Colors from '../constants/Colors';
+
 
 // const navigation = useNavigation()
 const config = Platform.select({
-  web: { headerMode: 'screen' },
+  web: { headerMode: 'none' },
   default: {},
 });
 
@@ -41,7 +42,8 @@ const RequestStack = createStackNavigator(
 RequestStack.navigationOptions = {
   tabBarLabel: 'Request',
   tabBarIcon: ({focused}) => (
-  <Button focused={focused} type="request" onClick={()=>{navigate("Request")}}/>
+  // <Button focused={focused} type="request" onClick={()=>{navigate("Request")}}/>
+   <TabBarIcon focused={focused} icon="request" name={Platform.OS === 'ios' ? 'ios-add-circle-outline' : 'ios-add-circle-outline'} />
   ),
 };
 RequestStack.path = '';
@@ -67,7 +69,6 @@ const tabNavigator = createBottomTabNavigator({
   HomeStack,
   RequestStack,
   NotificationStack,
- 
 },{
   tabBarOptions: {
       showLabel: true,
