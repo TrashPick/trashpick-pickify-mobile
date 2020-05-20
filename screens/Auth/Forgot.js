@@ -48,7 +48,7 @@ export default function ForgotPassword({navigation}){
     return(
        <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
-            <Header leftAction={renderBackBtn()} title="Forgot Password" />
+            <Header leftAction={renderBackBtn()} title="Forgot Password"  type="auth"/>
             <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}

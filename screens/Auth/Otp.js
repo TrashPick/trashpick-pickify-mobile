@@ -36,7 +36,7 @@ export default function Otp({navigation}){
     return(
         <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
-            <Header leftAction={renderBackBtn()} title="Confirmation Code" />
+            <Header leftAction={renderBackBtn()} title="Confirmation Code"  type="auth"/>
             <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}

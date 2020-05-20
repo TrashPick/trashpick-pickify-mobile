@@ -41,7 +41,7 @@ export default function Signup({navigation}){
     return(
       <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
-         <Header leftAction={renderBackBtn()} title="Create an account" />
+         <Header leftAction={renderBackBtn()} title="Create an account" type="auth" />
          <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}

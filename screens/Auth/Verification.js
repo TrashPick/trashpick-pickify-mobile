@@ -39,7 +39,7 @@ export default function Verification({navigation}){
     return(
         <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
-            <Header leftAction={renderBackBtn()} title="Enter Phone number" />
+            <Header leftAction={renderBackBtn()} title="Enter Phone number"  type="auth"/>
             <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}

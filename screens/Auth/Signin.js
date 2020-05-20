@@ -43,7 +43,7 @@ export default function Signin({navigation}){
     return(
       <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
-         <Header leftAction={renderBackBtn()} title="Login" />
+         <Header leftAction={renderBackBtn()} title="Login"  type="auth"/>
          <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}
