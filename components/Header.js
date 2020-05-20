@@ -6,24 +6,50 @@ export default class Header extends React.Component {
 	static defaultProps = {
 		title: 'Header Title'
 	};
-
-	
 	render() {
-		return (
-			<View>
-				<View style={[styles.container, this.props.style]}>
-					<View style={styles.backAndTitleContainer}>
-						{this.props.leftAction}
+		if(this.props.type === "auth"){
+			return (
+				<View>
+					<View style={[styles.container, this.props.style]}>
+						<View style={styles.backAndTitleContainer}>
+							{this.props.leftAction}
+						</View>
+						<View style={{}}>
+							{this.props.rightAction}
+						</View>
 					</View>
-					<View style={{}}>
-						{this.props.rightAction}
+					<View style={styles.headerStyle}>
+						<Text style={styles.headerTitleStyle}>{this.props.title}</Text>
 					</View>
 				</View>
-				<View style={styles.headerStyle}>
-					<Text style={styles.headerTitleStyle}>{this.props.title}</Text>
+			);
+		}else if(this.props.type === "App"){
+			return (
+				<View>
+					<View style={[styles.container, this.props.style]}>
+						<View style={styles.backAndTitleContainer}>
+							{this.props.leftAction}
+						</View>
+						<View style={styles.header}>
+							<Text style={styles.headerTitleStyle}>{this.props.title}</Text>
+						</View>
+						<View style={{}}>
+							{this.props.rightAction} 
+						</View>
+					</View>
 				</View>
-			</View>
-		);
+			);
+		}else if(this.props.type === "tabHeader"){
+			return (
+				<View>
+					<View style={[styles.tabHeaderContainer, this.props.style]}>
+						<View style={styles.header}>
+							<Text style={styles.headerTitleStyle}>{this.props.title}</Text>
+						</View>
+					</View>
+				</View>
+			);
+		}
 	}
 }
 
@@ -35,6 +61,9 @@ const styles = StyleSheet.create({
 		padding: 10,
 		alignItems: 'center'
 	},
+	tabHeaderContainer:{
+		padding: 10,
+	},
 	backAndTitleContainer: {
 		flexDirection: 'row',
 		alignItems: 'center'
@@ -42,6 +71,9 @@ const styles = StyleSheet.create({
 	headerStyle:{
 		alignItems:'flex-start',
 		paddingHorizontal:30
+	},
+	header:{
+		alignItems:'center'
 	},
 	headerTitleStyle: {
 		fontSize:Fonts.h1,
