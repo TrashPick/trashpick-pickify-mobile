@@ -1,11 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet,SafeAreaView,TouchableOpacity,TouchableNativeFeedback } from 'react-native'
-import {  Ionicons } from '@expo/vector-icons'
-import Colors from '../../constants/Colors'
+import { View, Text, StyleSheet,SafeAreaView,TouchableOpacity,TouchableNativeFeedback   } from 'react-native'
 import Header from '../../components/Header'
-import { AntDesign } from '@expo/vector-icons'
-
-function Notification(){
+import { AntDesign} from '@expo/vector-icons'
+import Colors from '../../constants/Colors'
+ function Help(){
     const renderBackBtn = ()=> {
         return (
           <View>
@@ -24,19 +22,19 @@ function Notification(){
             }
           </View>
         );
-  }
+    }
     return(
-        <SafeAreaView style={{flex:1}}>
-         <Header title="Notification" type="tabHeader" />
+       <SafeAreaView>
+        <Header leftAction={renderBackBtn()} title="Settings" type="App" />
             <View style={styles.container}>
-            <View style={{justifyContent:'center',alignItems:'center',flex:1}}>
-                <Text style={{textAlign:'center',fontFamily:'Regular',fontSize:16}}>Notification</Text>
-            </View>
-            </View>
-        </SafeAreaView>
-)
+                <View style={{justifyContent:'center',alignItems:'center'}}>
+                    <Text style={{textAlign:'center',fontFamily:'Regular',fontSize:16}}>Help</Text>
+                </View>
+             </View>
+       </SafeAreaView>
+    )
 }
-export default Notification;
+export default Help;
 
 const styles = StyleSheet.create({
 container:{
