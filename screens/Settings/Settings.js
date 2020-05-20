@@ -8,13 +8,13 @@ function Settings({navigation}){
         return (
           <View>
             {Platform.OS === 'ios' ?
-            <TouchableOpacity activeOpacity={0.8} onPress={() =>navigation.pop()}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() =>navigation.openDrawer()}>
             <View style={styles.backBtn}>
               <AntDesign name="arrowleft" color="black" size={18} />
             </View>
           </TouchableOpacity>
           :
-          <TouchableNativeFeedback onPress={() =>navigation.pop()} background={TouchableNativeFeedback.SelectableBackgroundBorderless()} useForeground={true} >
+          <TouchableNativeFeedback onPress={() =>navigation.openDrawer()} background={TouchableNativeFeedback.SelectableBackgroundBorderless()} useForeground={true} >
             <View style={styles.backBtn}>
               <AntDesign name="arrowleft" color="black" size={18} />
             </View>
