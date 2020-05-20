@@ -1,6 +1,7 @@
 import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import MainTabNavigator from './MainTabNavigator';
+import MainDrawer from './Drawer'
 import Details from '../screens/Auth/Details'
 import Welcome from '../screens/Auth/Welcome'
 import Signup from '../screens/Auth/Signup'
@@ -34,6 +35,6 @@ export default createAppContainer(
     AuthLoading:AuthLoading,
     AuthDetails:FirstAuthStack,
     Auth:SecondAuthStack,
-    Main: MainTabNavigator,
+    Main: MainDrawer,
   })
 );
