@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "pickTrash",
-    "slug": "pickTrash",
+    "name": "Pickify",
+    "slug": "Pickify",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
