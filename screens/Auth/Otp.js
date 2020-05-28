@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Plaform,TouchableOpacity } from 'react-native'
+import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Plaform,TouchableOpacity,StatusBar } from 'react-native'
 import Colors from '../../constants/Colors'
 import Fonts from '../../constants/Fonts'
 import Button from '../../components/Button'
@@ -37,6 +37,7 @@ export default function Otp({navigation}){
         <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
             <Header leftAction={renderBackBtn()} title="Confirmation Code"  type="auth"/>
+            <StatusBar barStyle="light-content" backgroundColor="white"/>
             <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}
@@ -116,12 +117,29 @@ const styles = StyleSheet.create({
     lineHeight: 38,
     fontSize: 24,
     borderBottomWidth: 2,
+    ...Platform.select({
+      ios: {
+        borderBottomColor:Colors.otpColor,
+        color:Colors.black
+      },
+      android: {
+        borderBottomColor:Colors.otpColor,
+        color:Colors.black
+      }
+    }),
     borderBottomColor:Colors.otpColor,
     textAlign: 'center',
     fontFamily:"Medium",
     color:Colors.black
   },
   focusCell: {
-    borderBottomColor:Colors.green,
+    ...Platform.select({
+      ios: {
+      backgroundColor:Colors.grey
+      },
+      android: {
+        borderColor:Colors.green,
+      }
+    }),
   },
 })

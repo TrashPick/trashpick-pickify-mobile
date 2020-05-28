@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Plaform,TouchableOpacity } from 'react-native'
+import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Plaform,TouchableOpacity,StatusBar } from 'react-native'
 import Colors from '../../constants/Colors'
 import Fonts from '../../constants/Fonts'
 import Button from '../../components/Button'
@@ -40,6 +40,7 @@ export default function Verification({navigation}){
         <SafeAreaView style={{flex:1}}>
             <View style={styles.container}>
             <Header leftAction={renderBackBtn()} title="Enter Phone number"  type="auth"/>
+            <StatusBar barStyle="light-content" backgroundColor="white"/>
             <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
 						behavior={Platform.OS === "android" ? "height" : "padding"}

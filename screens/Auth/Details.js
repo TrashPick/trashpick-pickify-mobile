@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Platform,TouchableOpacity,} from 'react-native'
+import { View,StyleSheet,Text,TouchableNativeFeedback,SafeAreaView,KeyboardAvoidingView,Platform,TouchableOpacity,StatusBar} from 'react-native'
 import AuthContext from '../Auth/AuthContext'
 import Colors from '../../constants/Colors'
 import Fonts from '../../constants/Fonts'
@@ -17,6 +17,7 @@ export default function Details({navigation}){
     }
     return(
       <SafeAreaView style={{flex:1}}>
+       <StatusBar barStyle="light-content" backgroundColor="white"/>
         <View style={styles.container}>
          <KeyboardAvoidingView
 						style={{ flex: 1, justifyContent: "center" }}
@@ -32,7 +33,7 @@ export default function Details({navigation}){
               </View>
             </View>
             <View style={styles.btnContainer}>
-               <Button type="signup" onClick={()=>{navigation.navigate("Welcome")}} title="Continue"/>
+               <Button type="signup" onClick={()=>{navigation.navigate("Welcome")}} title="Next"/>
             </View>
             </KeyboardAvoidingView>
         </View>
