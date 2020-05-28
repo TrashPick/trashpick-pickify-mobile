@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet,SafeAreaView,TouchableOpacity,TouchableNativeFeedback   } from 'react-native'
+import { View, Text, StyleSheet,SafeAreaView,TouchableOpacity,TouchableNativeFeedback,StatusBar   } from 'react-native'
 import Header from '../../components/Header'
 import { AntDesign} from '@expo/vector-icons'
 import Colors from '../../constants/Colors'
@@ -26,6 +26,7 @@ import Colors from '../../constants/Colors'
     return(
        <SafeAreaView style={{flex:1}}>
         <Header leftAction={renderBackBtn()} title="Help" type="App" />
+        <StatusBar barStyle="light-content" backgroundColor="white"/>
             <View style={styles.container}>
                 <View style={{justifyContent:'center',alignItems:'center'}}>
                     <Text style={{textAlign:'center',fontFamily:'Regular',fontSize:16}}>Help</Text>

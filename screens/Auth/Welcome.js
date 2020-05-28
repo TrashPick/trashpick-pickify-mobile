@@ -27,6 +27,7 @@ export default class Welcome extends React.Component{
     return(
         <SafeAreaView style={{flex:1}}>
         <View style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="white"/>
             <View style={styles.carousel}>
                 <Carousel
                     ref={(c) => { this._carousel = c; }}
