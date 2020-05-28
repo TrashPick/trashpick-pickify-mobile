@@ -25,7 +25,7 @@ const HomeStack = createStackNavigator(
   config
 );
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Pickups',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} icon="home" name={Platform.OS === 'ios' ? 'home' : 'home'} />
   ),
