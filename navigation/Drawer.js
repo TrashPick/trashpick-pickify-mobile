@@ -28,10 +28,11 @@ const CustomComponent = (props)=>(
             <Text style={styles.title}>Kwame Agyenim - Boateng</Text>
             <Text style={styles.text}>kwameagyenimboateng64@gmail.com</Text>   
           </View>:
-          <View style={{flexDirection:'column',paddingLeft:20}}>
+          <View style={{flexDirection:'column',paddingLeft:10}}>
             <Text style={styles.title}>Kwame Agyenim - Boateng</Text>
             <Text style={styles.text}>kwameagyenimboateng64@gmail.com</Text>   
           </View>}
+          <View style={{borderBottomColor:Colors.border,borderBottomWidth:1}}></View>
       </View>
     <ScrollView showsVerticalScrollIndicator={false}>
         <DrawerItems {...props} />
@@ -100,7 +101,6 @@ const MainDrawer = createDrawerNavigator(
    SettingsStack:{
      screen:SettingsStack,
      navigationOptions:{
-      // drawerLockMode:'locked-closed',
       drawerIcon:({focused})=>(
         // <SimpleLineIcons focused={focused} name="settings" size={20} color={Colors.black} />
         <Feather focused={focused} name="settings" size={22} color={Colors.black}  />
@@ -116,7 +116,7 @@ const MainDrawer = createDrawerNavigator(
   // drawerType:"slide",
   drawerWidth:350,
   contentOptions: {
-        activeTintColor: '#e91e63',
+        activeTintColor:Colors.green,
         inactiveTintColor:Colors.grey,
         itemsContainerStyle: {
           marginVertical: 0,
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   labelContainer:{
-    paddingVertical:20
+    paddingVertical:15
   },
   label:{
     textAlign:'center',
@@ -150,6 +150,6 @@ const styles = StyleSheet.create({
     fontFamily:"Medium",
     fontSize:14,
     letterSpacing:-0.2,
-    color:Colors.grey,
+    color:Colors.textColor,
   }
 });
