@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     },
     text:{
         fontFamily:"Medium",
-        fontSize:Font.h2,
+        fontSize:Font.t2,
         color:"white",
         textAlign:'center'
     },
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   },
   text2:{
       fontFamily:"Medium",
-      fontSize:Font.h2,
+      fontSize:Font.t2,
       color:Colors.green,
       textAlign:'center'
   }
