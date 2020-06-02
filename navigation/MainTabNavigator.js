@@ -7,8 +7,8 @@ import Button from '../components/Button'
 import Colors from '../constants/Colors';
 import TabBarIcon from '../components/TabBarIcon';
 import Home from '../screens/Home/Home';
-import Notification from '../screens/Notifications/Notification'
 import Request from '../screens/Request/Request'
+import Profile from '../screens/Profile/Profile'
 
 
 // const navigation = useNavigation()
@@ -27,7 +27,7 @@ const HomeStack = createStackNavigator(
 HomeStack.navigationOptions = {
   tabBarLabel: 'Pickups',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} icon="home" name={Platform.OS === 'ios' ? 'home' : 'home'} />
+    <TabBarIcon focused={focused} icon="home" name={Platform.OS === 'ios' ? 'home-variant' : 'home-variant'} />
   ),
 };
 HomeStack.path = '';
@@ -48,27 +48,27 @@ RequestStack.navigationOptions = {
 };
 RequestStack.path = '';
 
-const NotificationStack = createStackNavigator(
+const ProfileStack = createStackNavigator(
   {
-    Notification: Notification,
+    Profile: Profile,
   },
   { headerMode: 'none' },
   config
 );
 
-NotificationStack.navigationOptions = {
-  tabBarLabel: 'Notifications',
+ProfileStack.navigationOptions = {
+  tabBarLabel: 'Account',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} icon="notification" name={Platform.OS === 'ios' ? 'notifications-none' : 'notifications-none'} />
+    <TabBarIcon focused={focused} icon="account" name={Platform.OS === 'ios' ? 'user' : 'user'} />
   ),
 };
 
-NotificationStack.path = '';
+ProfileStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   RequestStack,
-  NotificationStack,
+  ProfileStack,
 },{
   tabBarOptions: {
       showLabel: true,
