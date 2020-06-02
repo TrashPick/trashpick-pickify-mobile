@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Fonts from '../constants/Fonts'
+import Colors from '../constants/Colors';
 
 export default class Header extends React.Component {
 	static defaultProps = {
@@ -25,7 +26,7 @@ export default class Header extends React.Component {
 			);
 		}else if(this.props.type === "App"){
 			return (
-				<View>
+				<View style={{borderBottomColor:Colors.border,borderBottomWidth:1}}>
 					<View style={[styles.container, this.props.style]}>
 						<View style={styles.backAndTitleContainer}>
 							{this.props.leftAction}
@@ -76,9 +77,9 @@ const styles = StyleSheet.create({
 		alignItems:'center'
 	},
 	headerTitleStyle: {
-		fontSize:Fonts.h1,
+		fontSize:Fonts.t1,
 		fontFamily:'Bold',
-		letterSpacing:-0.8,
+		letterSpacing:-0.2,
 		textAlign:'center'
 	}
 });
