@@ -2,11 +2,11 @@ import React from 'react'
 import { DrawerItems,createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import { SafeAreaView,StyleSheet,View,ScrollView,Text, Platform } from 'react-native'
-import { EvilIcons,Ionicons,SimpleLineIcons,AntDesign,Feather } from '@expo/vector-icons';
+import { MaterialIcons,Feather } from '@expo/vector-icons';
 import Search from '../screens/Search/Search';
 import Help from '../screens/Help/Help';
 import Settings from '../screens/Settings/Settings';
-import Profile from '../screens/Profile/Profile';
+import Notification from '../screens/Notifications/Notification'
 import MainTabNavigator from './MainTabNavigator';
 import Colors from '../constants/Colors'
 import Layout from '../constants/Layout'
@@ -20,7 +20,7 @@ const Label = (props)=>(
 )
 const CustomComponent = (props)=>(
   <SafeAreaView style={{flex:1}}>
-      <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center',paddingVertical:30,}}>
+      <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center',paddingVertical:50,}}>
           {/* <EvilIcons name="user" size={104} color={Colors.grey} /> */}
           <UserAvatar size={50} name="Kwame Agyenim" bgColor={Colors.green} />
           {Platform === "ios" ? 
@@ -47,9 +47,9 @@ const SettingsStack = createStackNavigator(
   headerMode:"none"
 }
 ) 
-const ProfileStack = createStackNavigator(
+const NotificationStack = createStackNavigator(
   {
-    Profile:Profile
+    Notification:Notification
 },{
   headerMode:"none"
 }
@@ -74,15 +74,15 @@ const MainDrawer = createDrawerNavigator(
      )
     }
    },
-   ProfileStack:{
-     screen:ProfileStack,
+   NotificationStack:{
+     screen:NotificationStack,
      navigationOptions:{
        drawerIcon:({focused})=>(
         // <AntDesign focused={focused} name="user" size={22} color={Colors.black}/>
-        <Feather focused={focused} name="user" size={24}  color={Colors.black} />
+        <MaterialIcons name="notifications-none" size={24} color={Colors.black} />
       ),
       drawerLabel:()=>(
-        <Label name="Profile"/>
+        <Label name="Notifications"/>
       )
      }
    },
@@ -103,7 +103,7 @@ const MainDrawer = createDrawerNavigator(
      navigationOptions:{
       drawerIcon:({focused})=>(
         // <SimpleLineIcons focused={focused} name="settings" size={20} color={Colors.black} />
-        <Feather focused={focused} name="settings" size={22} color={Colors.black}  />
+        <Feather focused={focused} name="settings" size={20} color={Colors.black}  />
       ),
       drawerLabel:()=>(
         <Label name="Settings"/>
