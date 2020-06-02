@@ -8,7 +8,7 @@ const white = '#FCFCFC';
 const grey = '#A6AAB4';
 const textBackground = '#F0FBF3';
 const otpColor = '#bdbdbd';
-
+const screenbackground = "#F8F8F8";
 
 export default {
   tintColor,
@@ -21,6 +21,7 @@ export default {
   grey,
   textBackground,
   otpColor,
+  screenbackground,
   tabIconDefault: '#ccc',
   tabIconSelected: tintColor,
   tabBar: '#fefefe',
