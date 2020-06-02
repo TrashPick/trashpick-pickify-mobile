@@ -2,7 +2,8 @@ import React from 'react'
 import { View,StyleSheet,Text,SafeAreaView,TouchableOpacity,TouchableNativeFeedback } from 'react-native'
 import Colors from '../../constants/Colors'
 import Header from '../../components/Header'
-import { AntDesign} from '@expo/vector-icons'
+import { AntDesign,Entypo} from '@expo/vector-icons'
+import Fonts from '../../constants/Fonts'
 function Profile({navigation}){
     const renderBackBtn = ()=> {
         return (
@@ -25,10 +26,19 @@ function Profile({navigation}){
   }
     return(
        <SafeAreaView style={{flex:1}}>
-         <Header leftAction={renderBackBtn()} title="Profile" type="App" />
+          <Header  title="Profile" type="auth" />
             <View style={styles.container}>
-                <View style={{justifyContent:'center',alignItems:'center',flex:1}}>
-                    <Text style={{textAlign:'center',fontFamily:'Regular',fontSize:16}}>Profile</Text>
+                <View style={styles.profile}>
+                    <Text style={styles.text}>Name</Text>
+                    <Entypo name="chevron-small-right" size={24}  color={Colors.black}/>
+                </View>
+                <View style={styles.profile}>
+                    <Text style={styles.text}>Phone Number</Text>
+                    <Entypo name="chevron-small-right" size={24} color={Colors.black} />
+                </View>
+                <View style={styles.profile}>
+                    <Text style={styles.text}>Email</Text>
+                    <Entypo name="chevron-small-right" size={24}  color={Colors.black}/>
                 </View>
             </View>
        </SafeAreaView>
@@ -38,5 +48,16 @@ export default Profile
 const styles = StyleSheet.create({
     container:{
         flex:1
+    },
+    profile:{
+      padding:40,
+      flexDirection:'row',
+      alignItems:'center',
+      justifyContent:'space-between',
+    },
+    text:{
+      fontFamily:"Medium",
+      fontSize:Fonts.t2,
+      color:Colors.black
     }
 })

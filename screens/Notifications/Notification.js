@@ -5,7 +5,7 @@ import Colors from '../../constants/Colors'
 import Header from '../../components/Header'
 import { AntDesign } from '@expo/vector-icons'
 
-function Notification(){
+function Notification({navigation}){
     const renderBackBtn = ()=> {
         return (
           <View>
@@ -27,10 +27,12 @@ function Notification(){
   }
     return(
         <SafeAreaView style={{flex:1}}>
-         <Header title="Notification" type="tabHeader" />
+         <Header leftAction={renderBackBtn()} title="Notifications" type="App" />
             <View style={styles.container}>
             <View style={{justifyContent:'center',alignItems:'center',flex:1}}>
-                <Text style={{textAlign:'center',fontFamily:'Regular',fontSize:16}}>Notification</Text>
+                <View style={{paddingVertical:40,justifyContent:'center'}}>
+                      <Text style={{fontFamily:'Medium',fontSize:16}}>You have no notifications</Text>
+                   </View>
             </View>
             </View>
         </SafeAreaView>
