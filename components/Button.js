@@ -87,13 +87,13 @@ export default class  Button extends React.Component{
          <View>
            {Platform.OS === 'ios' ?
            <TouchableOpacity activeOpacity={1} onPress={this.props.onClick}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}}>
-                  <Animated.View  style={[styles.request,animationStyle]}>
+                  <Animated.View  style={animationStyle}>
                      {props.childern}
                   </Animated.View>
           </TouchableOpacity>
           :
           <TouchableWithoutFeedback onPress={this.props.onClick}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}}>
-                  <Animated.View  style={[styles.request,animationStyle]}>
+                  <Animated.View  style={animationStyle}>
                   {props.childern}
                   </Animated.View>
           </TouchableWithoutFeedback>
