@@ -47,23 +47,23 @@ export default function Otp({navigation}){
                       <Text style={{fontFamily:'Medium',fontSize:16,color:Colors.grey,textAlign:'center',lineHeight:25}}>Enter the 5- digits code sent to (0500486323)</Text>
                   </View>
                   <View style={{paddingHorizontal:30,justifyContent:'center',flex:1}}>
-                <CodeField
-                    ref={ref}
-                    {...props}
-                    value={value}
-                    onChangeText={setValue}
-                    cellCount={CELL_COUNT}
-                    rootStyle={styles.codeFiledRoot}
-                    keyboardType="number-pad"
-                    renderCell={({index, symbol, isFocused}) => (
-                      <Text
-                        key={index}
-                        style={[styles.cell, isFocused && styles.focusCell]}
-                        onLayout={getCellOnLayoutHandler(index)}>
-                        {symbol || (isFocused ? <Cursor /> : null)}
-                      </Text>
-                    )}
-                  />
+                  <CodeField
+                      ref={ref}
+                      {...props}
+                      value={value}
+                      onChangeText={setValue}
+                      cellCount={CELL_COUNT}
+                      rootStyle={styles.codeFiledRoot}
+                      keyboardType="number-pad"
+                      renderCell={({index, symbol, isFocused}) => (
+                        <Text
+                          key={index}
+                          style={[styles.cell, isFocused && styles.focusCell]}
+                          onLayout={getCellOnLayoutHandler(index)}>
+                          {symbol || (isFocused ? <Cursor /> : null)}
+                        </Text>
+                      )}
+                    />
               </View>
               <View style={{paddingVertical:10,justifyContent:'center',alignItems:'center',paddingHorizontal:50,flex:1,flexDirection:'row'}}>
                       <Text style={{fontFamily:'Medium',fontSize:16,color:Colors.grey,textAlign:'center',lineHeight:25}}>Didn't receive any code? </Text>
