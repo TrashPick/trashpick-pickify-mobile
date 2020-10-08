@@ -70,7 +70,7 @@ export default class  Button extends React.Component{
            {Platform.OS === 'ios' ?
            <TouchableOpacity activeOpacity={1} onPress={this.props.onClick}  onPressIn={()=>{this.handlePressIn()}} onPressOut={()=>{this.handlePressOut()}}>
                   <Animated.View  style={[styles.request,animationStyle]}>
-                      <Ionicons name="ios-add" size={24} color="black" />
+                      <Ionicons name="ios-add" size={24} color="white" />
                   </Animated.View>
           </TouchableOpacity>
           :
