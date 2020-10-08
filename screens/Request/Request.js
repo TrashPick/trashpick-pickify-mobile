@@ -73,10 +73,13 @@ const styles = StyleSheet.create({
   heading: {
     textAlign: "center",
     fontFamily: "Bold",
-    fontSize: 16,
+    fontSize: 24,
+    letterSpacing:0.5,
+    paddingVertical:12
   },
   slogan: {
     fontFamily: "Medium",
     fontSize: 16,
+    letterSpacing:0.2,
   },
 });
