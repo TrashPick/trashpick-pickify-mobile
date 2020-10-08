@@ -76,7 +76,7 @@ export default function Signup({ navigation }) {
               justifyContent: "center",
               flex: 1,
               paddingHorizontal: 10,
-              paddingVertical: 40,
+              paddingTop: 80,
             }}
           >
             <View style={styles.emailContainer}>
@@ -171,10 +171,10 @@ const styles = StyleSheet.create({
   },
   emailContainer: {
     justifyContent: "center",
-    paddingVertical: 20,
+    paddingVertical: 15,
   },
   passwordContainer: {
-    // paddingVertical:20
+    paddingVertical:15
   },
   btnContainer: {
     flex: 1,
