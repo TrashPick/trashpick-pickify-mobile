@@ -36,11 +36,16 @@ async function loadResourcesAsync() {
     ]),
     Font.loadAsync({
       ...Ionicons.font,
-      'Bold':require('./assets/fonts/Quicksand-Bold.ttf'),
-      'SemiBold':require('./assets/fonts/Quicksand-SemiBold.ttf'),
-      'Medium':require('./assets/fonts/Quicksand-Medium.ttf'),
-      'Regular':require('./assets/fonts/Quicksand-Regular.ttf'),
-      'Light':require('./assets/fonts/Quicksand-Light.ttf'),
+      'Bold':require('./assets/fonts/AirbnbCerealExtraBold.ttf'),
+      'SemiBold':require('./assets/fonts/AirbnbCerealBold.ttf'),
+      'Medium':require('./assets/fonts/AirbnbCerealMedium.ttf'),
+      'Regular':require('./assets/fonts/AirbnbCerealBook.ttf'),
+      'Light':require('./assets/fonts/AirbnbCerealLight.ttf'),
+      // 'Bold':require('./assets/fonts/Quicksand-Bold.ttf'),
+      // 'SemiBold':require('./assets/fonts/Quicksand-SemiBold.ttf'),
+      // 'Medium':require('./assets/fonts/Quicksand-Medium.ttf'),
+      // 'Regular':require('./assets/fonts/Quicksand-Regular.ttf'),
+      // 'Light':require('./assets/fonts/Quicksand-Light.ttf'),
       
 
     }),
