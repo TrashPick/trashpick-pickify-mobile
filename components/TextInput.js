@@ -14,7 +14,7 @@ export default function Input(props) {
             textContentType="name"
             fontSize={16}
             placeholderTextColor={Colors.grey}
-            autoFocus={true}
+            // autoFocus={true}
             maxLength={180}
             multiline={true}
             onChange={props.onChange}
