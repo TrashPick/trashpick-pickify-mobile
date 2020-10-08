@@ -11,7 +11,7 @@ import Request from '../screens/Request/Request'
 import Profile from '../screens/Profile/Profile'
 
 
-// const navigation = useNavigation()
+// const navigation = useNavigation();
 const config = Platform.select({
   web: { headerMode: 'none' },
   default: {},
@@ -42,8 +42,8 @@ const RequestStack = createStackNavigator(
 RequestStack.navigationOptions = {
   tabBarLabel: 'Request',
   tabBarIcon: ({focused}) => (
-  // <Button focused={focused} type="request" onClick={()=>{navigate("Request")}}/>
-   <TabBarIcon focused={focused} icon="request" name={Platform.OS === 'ios' ? 'ios-add-circle-outline' : 'ios-add-circle-outline'} />
+  // <Button focused={focused} type="request" onClick={()=>{navigation("Request")}}/>
+   <TabBarIcon focused={focused} icon="request" name={Platform.OS === 'ios' ? 'ios-add' : 'ios-add'} />
   ),
 };
 RequestStack.path = '';
@@ -74,6 +74,7 @@ const tabNavigator = createBottomTabNavigator({
       showLabel: true,
       activeTintColor:Colors.green,
       inactiveTintColor :Colors.grey,
+      labelStyle:{fontSize:13}
       
 		}
 },{});
