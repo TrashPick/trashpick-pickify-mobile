@@ -10,7 +10,7 @@ function Notification({navigation}){
         return (
           <View>
             {Platform.OS === 'ios' ?
-            <TouchableOpacity activeOpacity={0.8} onPress={() =>navigation.pop()}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() =>navigation.openDrawer()}>
             <View style={styles.backBtn}>
               <AntDesign name="arrowleft" color="black" size={18} />
             </View>
